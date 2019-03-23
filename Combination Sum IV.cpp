@@ -158,7 +158,5 @@ private:
         }
         result[target] = re;
         return re;
-        
-        return result[target];
     }
 };
