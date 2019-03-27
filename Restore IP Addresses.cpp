@@ -23,7 +23,7 @@ private:
 
 			string last = s.substr(idx, s.size() - idx);
 			if (last.size() > 3) return;
-      if (last.size() != 1 && last[0] == '0') return;
+                        if (last.size() != 1 && last[0] == '0') return;
 			if (stoi(last) > 255) return;
 
 			result.append(last);
@@ -41,7 +41,7 @@ private:
 			if (idx + i > s.size()) break;
 
 			string temp = s.substr(idx, i);
-      if (temp.size() != 1 && temp[0] == '0') continue;
+                        if (temp.size() != 1 && temp[0] == '0') continue;
 			if (i == 3 && stoi(temp) > 255) continue;
 
 			result.append(temp + ".");
