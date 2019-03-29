@@ -1,2 +1,2 @@
 # Algorithm-train
-LeetCode answer. (Only include methods beating 100% in time.)
+LeetCode answer. (Try to find methods beating 100% in time.)
