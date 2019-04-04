@@ -1,4 +1,4 @@
-class Solution {
+class Solution {                                                                       //my solution which is not brief.
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         
@@ -38,6 +38,34 @@ private:
         }
         
         if (n[start] == target || n[end] == target) return true;
+        return false;
+    }
+};
+------------------------------------------------------------------------------------------
+    
+class Solution {                                                               //通过取模实现
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        if (matrix.empty() || matrix[0].empty()) return false;
+        
+        int start = 0;
+        int m = matrix.size(), n = matrix[0].size();
+        int end = m * n - 1;
+        int mid;
+        
+        while (start + 1 < end){         //如果这么写，会避免死循环，但会跳过只有一个元素的情况。
+            
+            mid = start + (end - start) / 2;
+            int num = matrix[mid / n][mid % n];
+            
+            if (target > num) start = mid;
+            if (target < num) end = mid;
+            if (target == num) return true;
+        }
+       
+        if (matrix[start / n][start % n] == target || matrix[end / n][end % n] == target)
+            return true;
+        
         return false;
     }
 };
